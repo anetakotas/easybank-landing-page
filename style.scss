@@ -1,0 +1,207 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$lightWeight: 300;
+$normalWeight: 400;
+$boldWeight: 700;
+
+$paddingSides: 0 10%;
+$sectionHeight: 660px;
+
+@mixin buttonBase {
+    font-weight: $boldWeight;
+    color: $white;
+    background-image: linear-gradient(90deg, $limeGreen, $brightCyan);
+    border-radius: 25px;
+    padding: 15px 40px;
+
+}
+
+@mixin headingBase {
+    color: $darkBlue;
+    font-weight: $normalWeight;
+}
+
+@mixin paraColor {
+    color: $grayishBlue;
+}
+
+body {
+    background-color: gainsboro;
+    font-size: 18px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: $paddingSides;
+    background-color: $white;
+    height: 90px;
+    font-size: 17px;
+    position: relative;
+    z-index: 2;
+
+    .logo, ul, .button-wrapper  {
+        flex: 1;
+    }
+
+    .logo {
+        position: relative;
+        transform: translate(0, 18%);
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+    }
+
+    li {
+        flex: 1;
+
+        a {
+            @include paraColor();
+        }
+
+        a:hover {
+            border-bottom: 5px solid;
+            padding-bottom: 30px;
+            border-image: linear-gradient(90deg, $limeGreen, $brightCyan) 10% round;
+            
+            @include headingBase();
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: flex-end;   
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    @include buttonBase();
+}
+
+.button:hover {
+    filter: opacity(50%);
+}
+
+.section1 {
+    height: $sectionHeight;
+    background-color: $veryLightGray;
+    background-image: url(/images/bg-intro-desktop.svg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 630px -260px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $paddingSides;
+
+    img {
+        position: absolute;
+        right: -130px;
+        top: -120px;
+        z-index: 1;
+    }
+
+    h1 {
+        font-size: 3.1em;
+        font-weight: $normalWeight;
+        margin-bottom: 20px;
+
+        @include headingBase();
+    }
+
+    p {
+        margin-bottom: 50px;
+        line-height: 1.5em;
+        
+        @include paraColor();
+    }
+    
+}
+
+.sec1-content {
+    max-width: 450px;
+}
+
+.section2 {
+    height: $sectionHeight;
+    background-color: $lightGrayishBlue;
+    padding: $paddingSides;
+
+    h2 {
+        padding-bottom: 20px;
+        font-weight: $normalWeight;
+        font-size: 2.2em;
+
+        @include headingBase();
+    }
+
+    p {
+        @include paraColor();
+    }
+
+    h3 {
+        @include headingBase();
+    }
+}
+
+.sec2-content {
+    max-width: 700px;
+    padding-top: 120px;
+    padding-bottom: 70px;
+}
+
+.cards-container {
+    display: flex;
+
+    img {
+        padding-bottom: 30px;
+    }
+
+    h3 {
+        padding-bottom: 20px;
+    }
+
+    p {
+        font-size: 0.9em;
+        line-height: 1.5em;
+    }
+}
+
+.advantage-card {
+    margin: 0 10px;
+}
+
+.advantage-card:first-child {
+    margin-left: 0;
+}
+
+.advantage-card:last-child {
+    margin-right: 0;
+}
+
+.section3 {
+    height: $sectionHeight;
+    background-color: $white;
+    
+}
