@@ -48,10 +48,13 @@ $sectionHeight: 660px;
     list-style: none;
 }
 
+
+
 body {
     background-color: gainsboro;
     font-size: 18px;
     font-family: 'Public Sans', sans-serif;
+    
 }
 
 nav {
@@ -62,7 +65,7 @@ nav {
     height: 90px;
     font-size: 17px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
     .logo, ul, .button-wrapper  {
         flex: 1;
@@ -82,6 +85,7 @@ nav {
 
     li {
         flex: 1;
+        margin: 7px;
 
         a {
             @include paraColor();
@@ -127,14 +131,17 @@ a {
     display: flex;
     align-items: center;
     padding: $paddingSides;
-    overflow: hidden;
+    
+    
+    
     
 
     img {
         position: absolute;
         right: -130px;
         top: -120px;
-        z-index: 1;
+        z-index: 2;
+        
     }
 
     h1 {
@@ -162,6 +169,7 @@ a {
     height: $sectionHeight;
     background-color: $lightGrayishBlue;
     padding: $paddingSides;
+    z-index: 1;
 
     h2 {
         padding-bottom: 20px;
@@ -263,6 +271,7 @@ a {
 .articles-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .article-content {
@@ -271,7 +280,7 @@ a {
 
 .article-card {
     background-color: $white;
-    margin: 0 18px;
+    margin: 18px;
     width: 270px;
     border-radius: 5px;
     
@@ -325,9 +334,21 @@ footer {
 
 }
 
+.footer2, .footer3 {
+    a:hover {
+        color: $limeGreen;
+    }
+}
+
 .footer-icons {
    display: flex;
    justify-content: space-between; 
+
+   path:hover {
+       fill: $limeGreen;
+   }
+
+   
 }
 
 .footer4 {
@@ -335,4 +356,27 @@ footer {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+}
+
+.button-wrapper {
+    background-color: white;
+    border-radius: 25px;
+}
+
+
+@media (max-width: 1484px) {
+    .section3 {
+        height: 1120px;
+    }
+
+    .article-card {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1079px) {
+    .article-card:nth-child(2) {
+        margin-right: 0;
+        
+    }
 }

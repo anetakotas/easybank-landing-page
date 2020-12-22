@@ -23,7 +23,7 @@ nav {
   height: 90px;
   font-size: 17px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 nav .logo, nav ul, nav .button-wrapper {
@@ -50,6 +50,7 @@ nav li {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin: 7px;
 }
 
 nav li a {
@@ -109,14 +110,13 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10%;
-  overflow: hidden;
 }
 
 .section1 img {
   position: absolute;
   right: -130px;
   top: -120px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section1 h1 {
@@ -141,6 +141,7 @@ a {
   height: 660px;
   background-color: #f3f4f6;
   padding: 0 10%;
+  z-index: 1;
 }
 
 .section2 h2 {
@@ -248,6 +249,8 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .article-content {
@@ -256,7 +259,7 @@ a {
 
 .article-card {
   background-color: white;
-  margin: 0 18px;
+  margin: 18px;
   width: 270px;
   border-radius: 5px;
 }
@@ -315,6 +318,10 @@ footer p {
           justify-content: space-between;
 }
 
+.footer2 a:hover, .footer3 a:hover {
+  color: #31d35c;
+}
+
 .footer-icons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,6 +329,10 @@ footer p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.footer-icons path:hover {
+  fill: #31d35c;
 }
 
 .footer4 {
@@ -338,5 +349,25 @@ footer p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.button-wrapper {
+  background-color: white;
+  border-radius: 25px;
+}
+
+@media (max-width: 1484px) {
+  .section3 {
+    height: 1120px;
+  }
+  .article-card {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1079px) {
+  .article-card:nth-child(2) {
+    margin-right: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
