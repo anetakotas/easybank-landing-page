@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+::selection {
+    color: white;
+    background-color: hsl(136, 65%, 51%)
+}
+
 $darkBlue: hsl(233, 26%, 24%);
 $limeGreen: hsl(136, 65%, 51%);
 $brightCyan: hsl(192, 70%, 51%);
@@ -54,6 +59,7 @@ body {
     background-color: gainsboro;
     font-size: 18px;
     font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
     
 }
 
@@ -104,6 +110,10 @@ nav {
         display: flex;
         justify-content: flex-end;   
     }
+
+    .button:hover {
+        transform: scale(0.99);
+    }
 }
 
 a {
@@ -127,7 +137,7 @@ a {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: 630px -260px;
-    position: relative;
+    
     display: flex;
     align-items: center;
     padding: $paddingSides;
@@ -135,13 +145,14 @@ a {
     
     
     
+    .mockups-wrap {
+        position: relative;
+        left: 18%;
+    }
 
     img {
-        position: absolute;
-        right: -130px;
-        top: -120px;
-        z-index: 2;
-        
+        position: relative;
+
     }
 
     h1 {
@@ -158,11 +169,17 @@ a {
         
         @include paraColor();
     }
+
+    .button:hover {
+        transform: scale(0.98);
+    }
     
 }
 
 .sec1-content {
     max-width: 450px;
+    min-width: 450px;
+    
 }
 
 .section2 {
@@ -344,8 +361,12 @@ footer {
    display: flex;
    justify-content: space-between; 
 
-   path:hover {
+   a:hover path {
        fill: $limeGreen;
+   }
+
+   a {
+       display: inline-block;
    }
 
    
@@ -362,6 +383,12 @@ footer {
     background-color: white;
     border-radius: 25px;
 }
+
+.button-wrapper:hover {
+    transform: scale(0.98);
+}
+
+
 
 
 @media (max-width: 1484px) {
